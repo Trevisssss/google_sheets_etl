@@ -35,7 +35,15 @@ t2 = time.time()
 if values:
     df = pd.DataFrame(values[1:], columns=values[0]) 
     print(f"DataFrame criado com {df.shape[0]} linhas e {df.shape[1]} colunas.")
+
 # --- Resultados ---
 print(f"Tempo de autenticação: {t1 - t0:.2f}s")
 print(f"Tempo de leitura dos dados: {t2 - t1:.2f}s")
 print(f"Tempo total: {t2 - t0:.2f}s")
+
+# Testando para entender quanto pode ser o tempo para um processo desse tipo em uma planilha google.
+# Se a ideia for criar um dashboard, criar análises, normalmente se utiliza um notebook pra isso.
+# Dessa forma poderia ser feito de duas formas:
+# 1. Colocar todo o código da extração em uma função, de forma com que fosse possível chamar dentro do notebook, e criar as análises 
+    # (Para acasos onde o objetivo é que mais pessoas utilizem, ou criar uma pipeline que levará para um banco de dados)
+# 2. Fazer a extração e análises em um mesmo notebook, para os casos em que essa extração não seja utilizada por outras pessoas.
