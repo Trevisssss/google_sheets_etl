@@ -28,7 +28,10 @@ values = result.get("values", [])
 t2 = time.time()
 
 # Converter p/ DataFrame
-# OBS: Nessa planilha há 16 colunas e 558838 Linhas.
+# ⚠️OBS: Nessa planilha há 16 colunas e 558838 Linhas.
+# ⚠️ Uma planilha desse porte, no mundo real, já deveria estar sendo discutido a ideia de ela virar uma tabela em um banco de dados de alguma forma.
+# ⚠️ Só foi utilizada como exemplo.
+
 if values:
     df = pd.DataFrame(values[1:], columns=values[0]) 
     print(f"DataFrame criado com {df.shape[0]} linhas e {df.shape[1]} colunas.")
